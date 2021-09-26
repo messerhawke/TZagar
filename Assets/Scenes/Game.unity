@@ -398,6 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySpeed: 4
+  myCamera: {fileID: 1394863904}
 --- !u!58 &397197362
 CircleCollider2D:
   m_ObjectHideFlags: 0

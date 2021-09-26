@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] float mySpeed = 2f;
+    [SerializeField] GameObject myCamera;
     Vector3 mousePosition;
     float newPlayerSpeed;
     float distanceOffset;
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
             Vector3 offset = mousePosition - transform.position;
             float sqrLen = offset.sqrMagnitude;
             float playerMass = GetComponent<PlaySOne>().GetMyMass();
+            myCamera.GetComponent<CinemachineVirtualCamera>().m_Lens.OrthographicSize = 3 + playerMass/5; 
             if (sqrLen < 100f + playerMass + distanceOffset)
             {
                 newPlayerSpeed = (mySpeed / playerMass) * ((sqrLen - 100f) / (playerMass + distanceOffset));
