@@ -6,9 +6,24 @@ public class SettingsStorage : MonoBehaviour
 {
     Color colorValue = Color.red;
     float volumeValue = 1f;
+    List<HighScoreEntry> highScoreEntryList;
+    private void Awake()
+    {
+        highScoreEntryList = new List<HighScoreEntry>()//EXAMPLE 
+        {
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"},
+            new HighScoreEntry { score = 0, name = "---"}
+        };
+    }
 
-    
-    // Start is called before the first frame update
     public void SetColorValue(Color setColor)
     {
         colorValue = setColor;
@@ -27,5 +42,23 @@ public class SettingsStorage : MonoBehaviour
     public float GetVolumeValue()
     {
         return volumeValue;
+    }
+
+    public List<HighScoreEntry> GetHighScoreEntry()
+    {
+        return highScoreEntryList;
+    }
+    public void SetHighScoreEntry(List<HighScoreEntry> myHighScoreEntryList)
+    {
+        highScoreEntryList = myHighScoreEntryList;
+    }
+    public void AddHighScoreEntry(string myName, int myScore)
+    {
+        highScoreEntryList.Add(new HighScoreEntry() { score = myScore, name = myName });
+    }
+    public class HighScoreEntry
+    {
+        public int score;
+        public string name;
     }
 }

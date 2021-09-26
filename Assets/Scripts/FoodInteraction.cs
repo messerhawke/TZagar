@@ -23,6 +23,7 @@ public class FoodInteraction : MonoBehaviour
                 {
                     GameObject.Find("UI").transform.GetChild(0).gameObject.SetActive(true);
                     FindObjectOfType<PlayerController>().SetControl(true);
+                    FindObjectOfType<ResultInputController>().SetScoreHolder((int) (compareMass * 100  - 99));
                 }
                 Object.Destroy(collision.transform.parent.gameObject);
             }

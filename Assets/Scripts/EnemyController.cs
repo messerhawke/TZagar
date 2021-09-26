@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     bool isWandering = false;
     bool isRunning = false;
     bool isFollowing = false;
-    bool isNPCStuck = false;
+    //bool isNPCStuck = false;
 
     float compareMass;
     GameObject opponentGameObject;
