@@ -9,7 +9,7 @@ public class SettingsStorage : MonoBehaviour
     List<HighScoreEntry> highScoreEntryList;
     private void Awake()
     {
-        highScoreEntryList = new List<HighScoreEntry>()//EXAMPLE 
+        highScoreEntryList = new List<HighScoreEntry>()
         {
             new HighScoreEntry { score = 0, name = "---"},
             new HighScoreEntry { score = 0, name = "---"},

@@ -21,7 +21,7 @@ public class ResultsController : MonoBehaviour
         highScoreEntryList = FindObjectOfType<SettingsStorage>().GetHighScoreEntry();
 
 
-        for (int i = 0; i < highScoreEntryList.Count; i++)//SORT
+        for (int i = 0; i < highScoreEntryList.Count; i++)
         {
             for (int j = i + 1; j < highScoreEntryList.Count; j++)
             {

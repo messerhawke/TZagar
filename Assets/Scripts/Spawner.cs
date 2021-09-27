@@ -23,6 +23,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] GameObject myEnemyFab;
     [SerializeField] GameObject pelletFab;
     Color[] myListColors = new Color[] { Color.red, Color.green, Color.blue, Color.yellow, Color.white, Color.black, Color.magenta };
+    //For Names Generator
+    const string glyphsForNames = "abcdefghijklmnopqrstuvwxyz0123456789";
+    int minCharAmount=1, maxCharAmount=8;
     //[SerializeField] GameObject enemyFab;
     void Start()
     {
@@ -81,6 +84,13 @@ public class Spawner : MonoBehaviour
             newObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = myListColors[Random.Range(0, myListColors.Length)];
             float myRandomMass = Random.Range(minMass, maxMass);
             newObject.GetComponent<PlaySOne>().SetMyMass(myRandomMass);
+            int charAmount = Random.Range(minCharAmount, maxCharAmount);
+            string myNewName = "";
+            for (int i = 0; i < charAmount; i++)
+            {
+                myNewName += glyphsForNames[Random.Range(0, glyphsForNames.Length)];
+            }
+            newObject.name = myNewName;
         }
         else
             newObject.GetComponent<SpriteRenderer>().color = myListColors[Random.Range(0, myListColors.Length)];

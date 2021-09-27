@@ -62,19 +62,16 @@ public class EnemyController : MonoBehaviour
     {
         opponentGameObject = searchResult;
         float myMass = GetComponent<PlaySOne>().GetMyMass();
-        //Debug.Log(searchResult.name);
         compareMass = searchResult.transform.parent.GetComponent<PlaySOne>().GetMyMass();
         if (compareMass > myMass)
         {
             isRunning = true;
             isFollowing = false;
-            //Debug.Log("Running...");
         }
         else if (compareMass < myMass)
         {
             isRunning = false;
             isFollowing = true;
-            //Debug.Log("Following...");
         }
     }
     public void ClearSearchingObject(GameObject searchResult)
