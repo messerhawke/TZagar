@@ -39,12 +39,13 @@ public class EnemyController : MonoBehaviour
         if (isRunning)
         {
             newMoveSpeed = (moveSpeed / myMass) / (difficultyMultiplier);
-            
+            if (opponentGameObject != null)
             transform.position = Vector2.MoveTowards(transform.position, opponentGameObject.transform.position, -newMoveSpeed * Time.deltaTime);
         }
         if (isFollowing)
         {
             newMoveSpeed = (moveSpeed / myMass) / (difficultyMultiplier);
+            if(opponentGameObject != null)
             transform.position = Vector2.MoveTowards(transform.position, opponentGameObject.transform.position, newMoveSpeed * Time.deltaTime);
         }
     }

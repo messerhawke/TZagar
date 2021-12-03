@@ -7,15 +7,17 @@ public class FoodInteraction : MonoBehaviour
     //[SerializeField] GameObject myDeathUI;
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        float myMass = transform.parent.GetComponent<PlaySOne>().GetMyMass();
         if (collision.tag == "Food")
         {
+            if(myMass<15000)
             transform.parent.GetComponent<PlaySOne>().SetMyMass(collision.gameObject.GetComponent<PlaySOne>().GetMyMass());
             Object.Destroy(collision.gameObject);
         }
         if (collision.tag == "DZ")
         {
             float compareMass = collision.transform.parent.GetComponent<PlaySOne>().GetMyMass();
-            float myMass = transform.parent.GetComponent<PlaySOne>().GetMyMass();
+            
             if (compareMass < myMass)
             {
                 transform.parent.GetComponent<PlaySOne>().SetMyMass(collision.transform.parent.GetComponent<PlaySOne>().GetMyMass());
